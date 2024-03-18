@@ -18,7 +18,7 @@ Ultrasonic ultrasonicMid(triggerMid, echoMid); // สร้างอ็อบเ
 /// ควบคุมมอเตอร์
 #define PWM_pin1 13
 #define ina_pin1 12
-#define inb_pin1 27
+#define inb_pin1 32
 #define PWM_pin2 19
 #define ina_pin2 18
 #define inb_pin2 5
