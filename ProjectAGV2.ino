@@ -18,15 +18,16 @@ Ultrasonic ultrasonicMid(triggerMid, echoMid); // สร้างอ็อบเ
 /// ควบคุมมอเตอร์
 #define PWM_pin1 13
 #define ina_pin1 12
-#define inb_pin1 32
+#define inb_pin1 32//27
 #define PWM_pin2 19
 #define ina_pin2 18
 #define inb_pin2 5
+
 const char ssid[] = "Bossai";
 const char pass[] = "123456789";
 const char mqtt_broker[]="test.mosquitto.org";
 const char mqtt_topic[]="AGV_THE_PEAK";
-const char mqtt_client_id[]="clientId-ZJThyVWvuG"; // must change this string to a unique value
+const char mqtt_client_id[]="clientId-ZJThyVWvu"; // must change this string to a unique value
 int MQTT_PORT=1883;
 int counter=0;
 WiFiClient net;
@@ -138,6 +139,30 @@ void loop() {
       Serial.println("stop");digitalWrite(ina_pin2, LOW);
       Serial.println("stop");digitalWrite(inb_pin2, LOW);
      }
+     }else if(i == "k1"){
+      Serial.println("k1");analogWrite(PWM_pin1, 150);
+      Serial.println("k1");digitalWrite(ina_pin1, HIGH);
+      Serial.println("k1");digitalWrite(inb_pin1, LOW);
+
+      Serial.println("k1");analogWrite(PWM_pin2, 150);
+      Serial.println("k1");digitalWrite(ina_pin2, HIGH);
+      Serial.println("k1");digitalWrite(inb_pin2, LOW);
+      delay(10000);
+      Serial.println("k1");analogWrite(PWM_pin2, 150);
+      Serial.println("k1");digitalWrite(ina_pin2, LOW);
+      Serial.println("k1");digitalWrite(inb_pin2, HIGH);
+
+      Serial.println("k1");analogWrite(PWM_pin1, 150);
+      Serial.println("k1");digitalWrite(ina_pin1, HIGH);
+      Serial.println("k1");digitalWrite(inb_pin1, LOW);
+      delay(1125);
+      Serial.println("k1");analogWrite(PWM_pin1, 150);
+      Serial.println("k1");digitalWrite(ina_pin1, LOW);
+      Serial.println("k1");digitalWrite(inb_pin1, LOW);
+
+      Serial.println("k1");analogWrite(PWM_pin2, 150);
+      Serial.println("k1");digitalWrite(ina_pin2, LOW);
+      Serial.println("k1");digitalWrite(inb_pin2, LOW);
+     }
       else{}
-  }
 }
